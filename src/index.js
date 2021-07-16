@@ -2,7 +2,8 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import path from "path";
-import './database';
+import "./database";
+import productoRoutes from "./routes/producto.routes"
 
 /* -------------------------------------------------------------------------- */
 /*                                    Setup                                   */
@@ -29,10 +30,4 @@ app.use(express.json());
 app.use(express.urlencoded({ extend: true }));
 // Permite agregar rutas estáticas
 app.use(express.static(path.join(__dirname, "../public")));
-
-/* -------------------------------------------------------------------------- */
-/*                                    Rutas                                   */
-/* -------------------------------------------------------------------------- */
-app.get("/", (req, res) => {
-  res.send("Hola desde el servidor");
-});
+app.use('/api/cafeteria', productoRoutes)
