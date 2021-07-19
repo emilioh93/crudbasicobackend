@@ -30,4 +30,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extend: true }));
 // Permite agregar rutas estáticas
 app.use(express.static(path.join(__dirname, "../public")));
+
+/* ---------------------- Asignamos una ruta principal ---------------------- */
 app.use('/api/cafeteria', productoRoutes)
