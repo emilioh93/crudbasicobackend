@@ -60,6 +60,7 @@ cafeteriaCtrl.eliminarProducto = async (req, res) => {
       .json({ mensaje: "Ocurrió un error al eliminar el producto" });
   }
 };
+
 cafeteriaCtrl.editarProducto = async (req, res) => {
   try {
     console.log(req.params.id);
@@ -69,6 +70,19 @@ cafeteriaCtrl.editarProducto = async (req, res) => {
     console.log(error);
     // Enviar error al fronted
     res.status(404).json({ mensaje: "Ocurrió un error al editar el producto" });
+  }
+};
+
+cafeteriaCtrl.obtenerProducto = async (req, res) => {
+  try {
+    const productoBuscado = await Producto.findById(req.params.id);
+    res.status(200).json(productoBuscado);
+  } catch (error) {
+    console.log(error);
+    // Enviar error al fronted
+    res
+      .status(404)
+      .json({ mensaje: "Ocurrió un error al obtener el producto" });
   }
 };
 

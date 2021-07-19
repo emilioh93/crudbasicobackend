@@ -12,6 +12,7 @@ router
 router
   .route("/:id")
   .delete(cafeteriaCtrl.eliminarProducto)
-  .put(cafeteriaCtrl.editarProducto);
+  .put(cafeteriaCtrl.editarProducto)
+  .get(cafeteriaCtrl.obtenerProducto);
 
 export default router;
