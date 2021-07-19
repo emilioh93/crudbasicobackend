@@ -6,7 +6,9 @@ const router = Router();
 /* ------------------------------- Creo rutas ------------------------------- */
 router
   .route("/")
-  .get(cafeteriaCtrl.getPrueba)
+  .get(cafeteriaCtrl.listaProductos)
   .post(cafeteriaCtrl.productoNuevo);
+
+  router.route("/:id").delete(cafeteriaCtrl.eliminarProducto);
 
 export default router;
