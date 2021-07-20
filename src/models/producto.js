@@ -7,12 +7,15 @@ const productoSchema = new Schema({
     maxLength: 150,
     unique: true,
   },
-
   precioProducto: {
     type: Number,
     required: true,
   },
   categoria: {
+    type: String,
+    required: true,
+  },
+  imagen: {
     type: String,
     required: true,
   },
