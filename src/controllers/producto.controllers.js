@@ -15,6 +15,7 @@ cafeteriaCtrl.productoNuevo = async (req, res) => {
     const nuevoProducto = new Producto({
       nombreProducto: req.body.nombreProducto,
       precioProducto: req.body.precioProducto,
+      imagenProducto: req.body.imagenProducto,
       categoria: req.body.categoria,
     });
     // Guardo el objeto para guardar en la base de datos
