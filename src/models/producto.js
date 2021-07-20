@@ -11,11 +11,11 @@ const productoSchema = new Schema({
     type: Number,
     required: true,
   },
-  categoria: {
+  imagenProducto: {
     type: String,
     required: true,
   },
-  imagenProducto: {
+  categoria: {
     type: String,
     required: true,
   },
